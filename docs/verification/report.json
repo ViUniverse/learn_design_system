@@ -1,0 +1,1494 @@
+{
+  "name": "Learn Design System specification audit",
+  "checkedAt": "2026-10-11T10:25:20.072766+00:00",
+  "status": "pass",
+  "scope": "Written specification, generated tokens, local links and exact color pairs. No production widget behavior or device/screen-reader certification.",
+  "coverage": {
+    "foundation": 16,
+    "component": 64,
+    "compose": 8
+  },
+  "categories": {
+    "Actions": 3,
+    "Data": 5,
+    "Feedback": 8,
+    "Forms": 14,
+    "Learning": 13,
+    "Navigation": 9,
+    "Surfaces": 12
+  },
+  "markdownFiles": 96,
+  "linksChecked": 767,
+  "externalReferenceCount": 34,
+  "externalLinkScope": "Source URLs documented from research; this validator does not fetch websites.",
+  "semanticColorRolesPerTheme": 41,
+  "cssVariables": 188,
+  "cssMatchesJSON": true,
+  "component": [
+    {
+      "id": "button",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "icon-button",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "text-link",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "form-field",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "text-input",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "textarea",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "search",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "select",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "combobox",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "checkbox",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "radio-group",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "switch",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "slider",
+      "sections": 12,
+      "propertyCount": 7,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "tag-input",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "date-picker",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "date-range-picker",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "file-upload",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "tabs",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "segmented-control",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "navbar",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "sidebar",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "breadcrumb",
+      "sections": 12,
+      "propertyCount": 3,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "pagination",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "stepper",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "menu",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "toolbar",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "card",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "divider",
+      "sections": 12,
+      "propertyCount": 3,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "accordion",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "avatar",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "avatar-group",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "badge",
+      "sections": 12,
+      "propertyCount": 3,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "image",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "carousel",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "tooltip",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "popover",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "dialog",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "drawer",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "alert",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "banner",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "toast",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "empty-state",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "loading-indicator",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "skeleton",
+      "sections": 12,
+      "propertyCount": 4,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "progress",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "error-state",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "list",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "data-table",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "stat",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "markdown",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "code-block",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "lesson-card",
+      "sections": 12,
+      "propertyCount": 8,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "topic-card",
+      "sections": 12,
+      "propertyCount": 7,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "audio-player",
+      "sections": 12,
+      "propertyCount": 8,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "mini-player",
+      "sections": 12,
+      "propertyCount": 7,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "seek-bar",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "waveform",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "speed-control",
+      "sections": 12,
+      "propertyCount": 5,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "transcript",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "vocabulary-card",
+      "sections": 12,
+      "propertyCount": 8,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "dictionary-popover",
+      "sections": 12,
+      "propertyCount": 7,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "review-card",
+      "sections": 12,
+      "propertyCount": 7,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "learning-progress",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    },
+    {
+      "id": "download-status",
+      "sections": 12,
+      "propertyCount": 6,
+      "example": "valid JSON",
+      "specificPolicy": true
+    }
+  ],
+  "contrastChecks": [
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "background",
+      "ratio": 16.83,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "background",
+      "ratio": 5.9045,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "background",
+      "ratio": 5.1462,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "background",
+      "ratio": 5.8466,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "background",
+      "ratio": 8.0702,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "background-subtle",
+      "ratio": 16.1143,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "background-subtle",
+      "ratio": 5.6534,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "background-subtle",
+      "ratio": 4.9274,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "background-subtle",
+      "ratio": 5.598,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "background-subtle",
+      "ratio": 7.727,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "surface",
+      "ratio": 16.83,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "surface",
+      "ratio": 5.9045,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "surface",
+      "ratio": 5.1462,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "surface",
+      "ratio": 5.8466,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "surface",
+      "ratio": 8.0702,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "surface-raised",
+      "ratio": 16.83,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "surface-raised",
+      "ratio": 5.9045,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "surface-raised",
+      "ratio": 5.1462,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "surface-raised",
+      "ratio": 5.8466,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "surface-raised",
+      "ratio": 8.0702,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "surface-hover",
+      "ratio": 14.9003,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "surface-hover",
+      "ratio": 5.2275,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "surface-hover",
+      "ratio": 4.5561,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "surface-hover",
+      "ratio": 5.1763,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "surface-hover",
+      "ratio": 7.1449,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-primary",
+      "background": "input-background",
+      "ratio": 16.83,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-secondary",
+      "background": "input-background",
+      "ratio": 5.9045,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text-placeholder",
+      "background": "input-background",
+      "ratio": 5.1462,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link",
+      "background": "input-background",
+      "ratio": 5.8466,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "link-hover",
+      "background": "input-background",
+      "ratio": 8.0702,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "on-primary",
+      "background": "primary",
+      "ratio": 18.776,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "on-primary",
+      "background": "primary-hover",
+      "ratio": 13.1411,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "on-primary",
+      "background": "primary-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "selected-foreground",
+      "background": "selected-background",
+      "ratio": 5.8214,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "selected-foreground",
+      "background": "selected-hover",
+      "ratio": 5.2728,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "on-danger",
+      "background": "danger",
+      "ratio": 6.5743,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "on-danger",
+      "background": "danger-hover",
+      "ratio": 8.6643,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "peach-foreground",
+      "background": "peach-background",
+      "ratio": 6.8764,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "success-foreground",
+      "background": "success-background",
+      "ratio": 6.4679,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "warning-foreground",
+      "background": "warning-background",
+      "ratio": 6.4946,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "error-background",
+      "ratio": 5.9327,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "info-foreground",
+      "background": "info-background",
+      "ratio": 6.0697,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "border-control",
+      "background": "background",
+      "ratio": 3.4522,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "border-control",
+      "background": "surface",
+      "ratio": 3.4522,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "border-control",
+      "background": "surface-raised",
+      "ratio": 3.4522,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "border-control",
+      "background": "surface-hover",
+      "ratio": 3.0564,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "border-control",
+      "background": "input-background",
+      "ratio": 3.4522,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus-ring",
+      "background": "background",
+      "ratio": 4.8983,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus-ring",
+      "background": "surface",
+      "ratio": 4.8983,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus-ring",
+      "background": "surface-raised",
+      "ratio": 4.8983,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus-ring",
+      "background": "surface-hover",
+      "ratio": 4.3367,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus-ring",
+      "background": "input-background",
+      "ratio": 4.8983,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "background",
+      "ratio": 6.5743,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "surface",
+      "ratio": 6.5743,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "surface-raised",
+      "ratio": 6.5743,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "surface-hover",
+      "ratio": 5.8205,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "error-foreground",
+      "background": "input-background",
+      "ratio": 6.5743,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "background",
+      "ratio": 4.2217,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "surface",
+      "ratio": 4.2217,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "surface-raised",
+      "ratio": 4.2217,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "surface-hover",
+      "ratio": 3.7376,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "input-background",
+      "ratio": 4.2217,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "foreground": "progress-active",
+      "background": "progress-track",
+      "ratio": 3.4118,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "background",
+      "ratio": 16.4466,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "background",
+      "ratio": 9.38,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "background",
+      "ratio": 7.6479,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "background",
+      "ratio": 9.3748,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "background",
+      "ratio": 12.5102,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "background-subtle",
+      "ratio": 15.5244,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "background-subtle",
+      "ratio": 8.8541,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "background-subtle",
+      "ratio": 7.219,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "background-subtle",
+      "ratio": 8.8492,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "background-subtle",
+      "ratio": 11.8088,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "surface",
+      "ratio": 14.6864,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "surface",
+      "ratio": 8.3762,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "surface",
+      "ratio": 6.8294,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "surface",
+      "ratio": 8.3715,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "surface",
+      "ratio": 11.1713,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "surface-raised",
+      "ratio": 13.2908,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "surface-raised",
+      "ratio": 7.5802,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "surface-raised",
+      "ratio": 6.1804,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "surface-raised",
+      "ratio": 7.5759,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "surface-raised",
+      "ratio": 10.1097,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "surface-hover",
+      "ratio": 11.5592,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "surface-hover",
+      "ratio": 6.5926,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "surface-hover",
+      "ratio": 5.3751,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "surface-hover",
+      "ratio": 6.5889,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "surface-hover",
+      "ratio": 8.7926,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-primary",
+      "background": "input-background",
+      "ratio": 14.6864,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-secondary",
+      "background": "input-background",
+      "ratio": 8.3762,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text-placeholder",
+      "background": "input-background",
+      "ratio": 6.8294,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link",
+      "background": "input-background",
+      "ratio": 8.3715,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "link-hover",
+      "background": "input-background",
+      "ratio": 11.1713,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "on-primary",
+      "background": "primary",
+      "ratio": 15.0145,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "on-primary",
+      "background": "primary-hover",
+      "ratio": 16.83,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "on-primary",
+      "background": "primary-pressed",
+      "ratio": 12.4761,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "selected-foreground",
+      "background": "selected-background",
+      "ratio": 8.8685,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "selected-foreground",
+      "background": "selected-hover",
+      "ratio": 7.7777,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "on-danger",
+      "background": "danger",
+      "ratio": 8.119,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "on-danger",
+      "background": "danger-hover",
+      "ratio": 10.3299,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "peach-foreground",
+      "background": "peach-background",
+      "ratio": 8.9791,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "success-foreground",
+      "background": "success-background",
+      "ratio": 10.7123,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "warning-foreground",
+      "background": "warning-background",
+      "ratio": 10.1248,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "error-background",
+      "ratio": 8.119,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "info-foreground",
+      "background": "info-background",
+      "ratio": 8.2359,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "border-control",
+      "background": "background",
+      "ratio": 4.9208,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "border-control",
+      "background": "surface",
+      "ratio": 4.3941,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "border-control",
+      "background": "surface-raised",
+      "ratio": 3.9766,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "border-control",
+      "background": "surface-hover",
+      "ratio": 3.4585,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "border-control",
+      "background": "input-background",
+      "ratio": 4.3941,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus-ring",
+      "background": "background",
+      "ratio": 9.9654,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus-ring",
+      "background": "surface",
+      "ratio": 8.8988,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus-ring",
+      "background": "surface-raised",
+      "ratio": 8.0532,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus-ring",
+      "background": "surface-hover",
+      "ratio": 7.004,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus-ring",
+      "background": "input-background",
+      "ratio": 8.8988,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "background",
+      "ratio": 9.4071,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "surface",
+      "ratio": 8.4003,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "surface-raised",
+      "ratio": 7.602,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "surface-hover",
+      "ratio": 6.6116,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "error-foreground",
+      "background": "input-background",
+      "ratio": 8.4003,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "background",
+      "ratio": 8.2549,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "surface",
+      "ratio": 7.3715,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "surface-raised",
+      "ratio": 6.6709,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "surface-hover",
+      "ratio": 5.8018,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "input-background",
+      "ratio": 7.3715,
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "progress-active",
+      "background": "progress-track",
+      "ratio": 4.8507,
+      "threshold": 3,
+      "pass": true
+    }
+  ],
+  "contrastExclusions": [
+    "disabled text: inactive control only",
+    "decorative lavender/border-subtle",
+    "alpha overlay/shadow: require compositing before text tests",
+    "images/gradients not rendered by this specification audit"
+  ],
+  "errors": []
+}

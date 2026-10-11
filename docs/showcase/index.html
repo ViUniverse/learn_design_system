@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Khám phá bộ màu, foundation và component của Learn Design System.">
+<title>Vi Learn — Design System Showcase</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%237c3aed'/%3E%3Cpath d='M10 22v-4m6 9V13m8 17V10m6 14v-8' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../tokens/design-tokens.css?v=6"><link rel="stylesheet" href="styles.css?v=6">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('vl-showcase-theme')||'light'}catch{}</script>
+<script src="catalog.js?v=6" defer></script><script src="app.js?v=6" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Bỏ qua menu</a>
+<aside id="sidebar" class="sidebar" aria-label="Danh mục design system">
+<a class="brand" href="#overview"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Vi Learn<small>DESIGN SYSTEM</small></span></a>
+<div class="version"><span class="status-dot"></span> Version 1.2 <span>Showcase</span></div>
+<label class="search-box"><span aria-hidden="true">⌕</span><input id="nav-search" type="search" placeholder="Tìm component…" aria-label="Tìm trong danh mục"></label>
+<nav id="navigation"></nav>
+<div class="sidebar-footer">Made for listening.<br><span>Designed for everyday learning.</span></div>
+</aside>
+<div id="scrim" class="scrim" hidden></div>
+<div class="page">
+<header class="topbar"><div class="topbar-left"><button id="mobile-menu" class="icon-btn mobile-only" aria-label="Mở danh mục" aria-expanded="false" aria-controls="sidebar">☰</button><span>Design system <span class="slash">/</span> <strong id="breadcrumb">Tổng quan</strong></span></div><div class="topbar-right"><span class="theme-label">Giao diện</span><div class="theme-switch" aria-label="Chế độ màu"><button data-theme-choice="light" aria-label="Light mode" aria-pressed="true">☀ <span>Light</span></button><button data-theme-choice="dark" aria-label="Dark mode" aria-pressed="false">☾ <span>Dark</span></button></div><a class="icon-btn token-link" href="../tokens/design-tokens.json" download aria-label="Tải design tokens JSON">↓</a></div></header>
+<main id="content" tabindex="-1"></main>
+<footer class="page-footer"><span>Vi Learn · Design System 1.2</span><span>HTML showcase · Nội dung bài học minh họa</span></footer>
+</div>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="demo-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+</body></html>

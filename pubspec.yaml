@@ -1,0 +1,22 @@
+name: learn_design_system
+description: Themes, controls and adaptive layouts for Flutter learning apps.
+version: 0.1.0
+publish_to: none
+repository: https://github.com/ViUniverse/learn_design_system
+environment:
+  sdk: ^3.10.0
+  flutter: '>=3.38.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  foldable_info: ^0.2.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: SN Pro
+      fonts:
+        - asset: assets/fonts/SNPro-Variable.ttf

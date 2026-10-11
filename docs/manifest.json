@@ -1,0 +1,525 @@
+{
+  "name": "Learn Design System",
+  "version": "1.3.0",
+  "scope": "design-specification",
+  "foundation": [
+    {
+      "id": "principles",
+      "title": "Nguyên tắc thiết kế",
+      "path": "foundation/principles.md"
+    },
+    {
+      "id": "color",
+      "title": "Màu sắc",
+      "path": "foundation/color.md"
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "path": "foundation/typography.md"
+    },
+    {
+      "id": "spacing-sizing",
+      "title": "Spacing và kích thước",
+      "path": "foundation/spacing-sizing.md"
+    },
+    {
+      "id": "layout-responsive",
+      "title": "Layout và responsive",
+      "path": "foundation/layout-responsive.md"
+    },
+    {
+      "id": "shape-border",
+      "title": "Shape và border",
+      "path": "foundation/shape-border.md"
+    },
+    {
+      "id": "elevation-layer",
+      "title": "Elevation và layer",
+      "path": "foundation/elevation-layer.md"
+    },
+    {
+      "id": "motion",
+      "title": "Motion",
+      "path": "foundation/motion.md"
+    },
+    {
+      "id": "iconography",
+      "title": "Iconography",
+      "path": "foundation/iconography.md"
+    },
+    {
+      "id": "imagery",
+      "title": "Imagery",
+      "path": "foundation/imagery.md"
+    },
+    {
+      "id": "interaction-accessibility",
+      "title": "Interaction và accessibility",
+      "path": "foundation/interaction-accessibility.md"
+    },
+    {
+      "id": "content-localization",
+      "title": "Content và localization",
+      "path": "foundation/content-localization.md"
+    },
+    {
+      "id": "forms-validation",
+      "title": "Form và validation",
+      "path": "foundation/forms-validation.md"
+    },
+    {
+      "id": "media-accessibility",
+      "title": "Media accessibility",
+      "path": "foundation/media-accessibility.md"
+    },
+    {
+      "id": "tokens-theming",
+      "title": "Token và theming",
+      "path": "foundation/tokens-theming.md"
+    },
+    {
+      "id": "data-visualization",
+      "title": "Dữ liệu và trực quan hóa",
+      "path": "foundation/data-visualization.md"
+    }
+  ],
+  "component": [
+    {
+      "id": "button",
+      "title": "Button",
+      "category": "Actions",
+      "path": "component/button.md"
+    },
+    {
+      "id": "icon-button",
+      "title": "Icon button",
+      "category": "Actions",
+      "path": "component/icon-button.md"
+    },
+    {
+      "id": "text-link",
+      "title": "Text link",
+      "category": "Actions",
+      "path": "component/text-link.md"
+    },
+    {
+      "id": "form-field",
+      "title": "Form field",
+      "category": "Forms",
+      "path": "component/form-field.md"
+    },
+    {
+      "id": "text-input",
+      "title": "Text input",
+      "category": "Forms",
+      "path": "component/text-input.md"
+    },
+    {
+      "id": "textarea",
+      "title": "Textarea",
+      "category": "Forms",
+      "path": "component/textarea.md"
+    },
+    {
+      "id": "search",
+      "title": "Search",
+      "category": "Forms",
+      "path": "component/search.md"
+    },
+    {
+      "id": "select",
+      "title": "Select",
+      "category": "Forms",
+      "path": "component/select.md"
+    },
+    {
+      "id": "combobox",
+      "title": "Combobox",
+      "category": "Forms",
+      "path": "component/combobox.md"
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "category": "Forms",
+      "path": "component/checkbox.md"
+    },
+    {
+      "id": "radio-group",
+      "title": "Radio group",
+      "category": "Forms",
+      "path": "component/radio-group.md"
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "category": "Forms",
+      "path": "component/switch.md"
+    },
+    {
+      "id": "slider",
+      "title": "Slider",
+      "category": "Forms",
+      "path": "component/slider.md"
+    },
+    {
+      "id": "tag-input",
+      "title": "Tag input",
+      "category": "Forms",
+      "path": "component/tag-input.md"
+    },
+    {
+      "id": "date-picker",
+      "title": "Date picker",
+      "category": "Forms",
+      "path": "component/date-picker.md"
+    },
+    {
+      "id": "date-range-picker",
+      "title": "Date range picker",
+      "category": "Forms",
+      "path": "component/date-range-picker.md"
+    },
+    {
+      "id": "file-upload",
+      "title": "File upload",
+      "category": "Forms",
+      "path": "component/file-upload.md"
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "category": "Navigation",
+      "path": "component/tabs.md"
+    },
+    {
+      "id": "segmented-control",
+      "title": "Segmented control",
+      "category": "Navigation",
+      "path": "component/segmented-control.md"
+    },
+    {
+      "id": "navbar",
+      "title": "Navbar",
+      "category": "Navigation",
+      "path": "component/navbar.md"
+    },
+    {
+      "id": "sidebar",
+      "title": "Sidebar",
+      "category": "Navigation",
+      "path": "component/sidebar.md"
+    },
+    {
+      "id": "breadcrumb",
+      "title": "Breadcrumb",
+      "category": "Navigation",
+      "path": "component/breadcrumb.md"
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "category": "Navigation",
+      "path": "component/pagination.md"
+    },
+    {
+      "id": "stepper",
+      "title": "Stepper",
+      "category": "Navigation",
+      "path": "component/stepper.md"
+    },
+    {
+      "id": "menu",
+      "title": "Menu",
+      "category": "Navigation",
+      "path": "component/menu.md"
+    },
+    {
+      "id": "toolbar",
+      "title": "Toolbar",
+      "category": "Navigation",
+      "path": "component/toolbar.md"
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "category": "Surfaces",
+      "path": "component/card.md"
+    },
+    {
+      "id": "divider",
+      "title": "Divider",
+      "category": "Surfaces",
+      "path": "component/divider.md"
+    },
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "category": "Surfaces",
+      "path": "component/accordion.md"
+    },
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "category": "Surfaces",
+      "path": "component/avatar.md"
+    },
+    {
+      "id": "avatar-group",
+      "title": "Avatar group",
+      "category": "Surfaces",
+      "path": "component/avatar-group.md"
+    },
+    {
+      "id": "badge",
+      "title": "Badge",
+      "category": "Surfaces",
+      "path": "component/badge.md"
+    },
+    {
+      "id": "image",
+      "title": "Image",
+      "category": "Surfaces",
+      "path": "component/image.md"
+    },
+    {
+      "id": "carousel",
+      "title": "Carousel",
+      "category": "Surfaces",
+      "path": "component/carousel.md"
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "category": "Surfaces",
+      "path": "component/tooltip.md"
+    },
+    {
+      "id": "popover",
+      "title": "Popover",
+      "category": "Surfaces",
+      "path": "component/popover.md"
+    },
+    {
+      "id": "dialog",
+      "title": "Dialog",
+      "category": "Surfaces",
+      "path": "component/dialog.md"
+    },
+    {
+      "id": "drawer",
+      "title": "Drawer / Sheet",
+      "category": "Surfaces",
+      "path": "component/drawer.md"
+    },
+    {
+      "id": "alert",
+      "title": "Alert",
+      "category": "Feedback",
+      "path": "component/alert.md"
+    },
+    {
+      "id": "banner",
+      "title": "Banner",
+      "category": "Feedback",
+      "path": "component/banner.md"
+    },
+    {
+      "id": "toast",
+      "title": "Toast",
+      "category": "Feedback",
+      "path": "component/toast.md"
+    },
+    {
+      "id": "empty-state",
+      "title": "Empty state",
+      "category": "Feedback",
+      "path": "component/empty-state.md"
+    },
+    {
+      "id": "loading-indicator",
+      "title": "Loading indicator",
+      "category": "Feedback",
+      "path": "component/loading-indicator.md"
+    },
+    {
+      "id": "skeleton",
+      "title": "Skeleton",
+      "category": "Feedback",
+      "path": "component/skeleton.md"
+    },
+    {
+      "id": "progress",
+      "title": "Progress",
+      "category": "Feedback",
+      "path": "component/progress.md"
+    },
+    {
+      "id": "error-state",
+      "title": "Error state",
+      "category": "Feedback",
+      "path": "component/error-state.md"
+    },
+    {
+      "id": "list",
+      "title": "List / List item",
+      "category": "Data",
+      "path": "component/list.md"
+    },
+    {
+      "id": "data-table",
+      "title": "Data table",
+      "category": "Data",
+      "path": "component/data-table.md"
+    },
+    {
+      "id": "stat",
+      "title": "Stat",
+      "category": "Data",
+      "path": "component/stat.md"
+    },
+    {
+      "id": "markdown",
+      "title": "Markdown",
+      "category": "Data",
+      "path": "component/markdown.md"
+    },
+    {
+      "id": "code-block",
+      "title": "Code block",
+      "category": "Data",
+      "path": "component/code-block.md"
+    },
+    {
+      "id": "lesson-card",
+      "title": "Lesson card",
+      "category": "Learning",
+      "path": "component/lesson-card.md"
+    },
+    {
+      "id": "topic-card",
+      "title": "Topic card",
+      "category": "Learning",
+      "path": "component/topic-card.md"
+    },
+    {
+      "id": "audio-player",
+      "title": "Audio player",
+      "category": "Learning",
+      "path": "component/audio-player.md"
+    },
+    {
+      "id": "mini-player",
+      "title": "Mini player",
+      "category": "Learning",
+      "path": "component/mini-player.md"
+    },
+    {
+      "id": "seek-bar",
+      "title": "Seek bar",
+      "category": "Learning",
+      "path": "component/seek-bar.md"
+    },
+    {
+      "id": "waveform",
+      "title": "Waveform",
+      "category": "Learning",
+      "path": "component/waveform.md"
+    },
+    {
+      "id": "speed-control",
+      "title": "Speed control",
+      "category": "Learning",
+      "path": "component/speed-control.md"
+    },
+    {
+      "id": "transcript",
+      "title": "Transcript",
+      "category": "Learning",
+      "path": "component/transcript.md"
+    },
+    {
+      "id": "vocabulary-card",
+      "title": "Vocabulary card",
+      "category": "Learning",
+      "path": "component/vocabulary-card.md"
+    },
+    {
+      "id": "dictionary-popover",
+      "title": "Dictionary popover",
+      "category": "Learning",
+      "path": "component/dictionary-popover.md"
+    },
+    {
+      "id": "review-card",
+      "title": "Review card",
+      "category": "Learning",
+      "path": "component/review-card.md"
+    },
+    {
+      "id": "learning-progress",
+      "title": "Learning progress",
+      "category": "Learning",
+      "path": "component/learning-progress.md"
+    },
+    {
+      "id": "download-status",
+      "title": "Download status",
+      "category": "Learning",
+      "path": "component/download-status.md"
+    }
+  ],
+  "compose": [
+    {
+      "id": "landing",
+      "title": "Landing page",
+      "path": "compose/landing.md"
+    },
+    {
+      "id": "discovery",
+      "title": "Khám phá bài nghe",
+      "path": "compose/discovery.md"
+    },
+    {
+      "id": "lesson-session",
+      "title": "Phiên nghe và transcript",
+      "path": "compose/lesson-session.md"
+    },
+    {
+      "id": "vocabulary-review",
+      "title": "Lưu từ và ôn tập",
+      "path": "compose/vocabulary-review.md"
+    },
+    {
+      "id": "onboarding",
+      "title": "Onboarding",
+      "path": "compose/onboarding.md"
+    },
+    {
+      "id": "settings",
+      "title": "Cài đặt",
+      "path": "compose/settings.md"
+    },
+    {
+      "id": "offline",
+      "title": "Ngoại tuyến và download",
+      "path": "compose/offline.md"
+    },
+    {
+      "id": "adaptive-window",
+      "title": "Adaptive window",
+      "path": "compose/adaptive-window.md"
+    }
+  ],
+  "tokens": [
+    "tokens/design-tokens.json",
+    "tokens/design-tokens.css"
+  ],
+  "coverage": {
+    "foundation": 16,
+    "component": 64,
+    "compose": 8
+  },
+  "updatedAt": "2026-10-11"
+}

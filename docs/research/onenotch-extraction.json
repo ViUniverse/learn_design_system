@@ -1,0 +1,505 @@
+{
+  "metadata": {
+    "title": "OneNotch — Design system extraction",
+    "url": "https://www.tryonenotch.com/vi",
+    "observedAt": "2026-10-08",
+    "locale": "vi",
+    "scope": "Landing page /vi; CSS public, computed styles, selected UI interactions. Not the full macOS app.",
+    "naming": "Semantic token names below are proposed by this extraction; they are not the original token names.",
+    "viewports": [
+      {
+        "width": 375,
+        "height": 812
+      },
+      {
+        "width": 420,
+        "height": 853
+      },
+      {
+        "width": 900,
+        "height": 1000
+      },
+      {
+        "width": 1440,
+        "height": 1000
+      }
+    ],
+    "viewportNote": "Browser reserved a 15px vertical scrollbar. innerWidth includes it; measured content width is smaller.",
+    "verification": "Selected tools tab updated aria-selected; opening another FAQ collapsed the initially open FAQ.",
+    "limitations": [
+      "Some video elements reported Unable to play media. Video playback fidelity and full scroll choreography were not validated.",
+      "CSS bundles contain legacy and other-route styles. Global tokens must not override active component scopes.",
+      "No complete dark theme, semantic status palette, or input validation system was established from this landing page.",
+      "Font family is confirmed from CSS and computed styles; glyph-level fallback and licenses were not audited."
+    ],
+    "sources": [
+      {
+        "url": "https://www.tryonenotch.com/_next/static/css/d8dbb79b1b11ae43.css",
+        "sha256": "453b0b5cf421011213b0d5e1c028a1dba7f2a6bbb15fdb8e6927354ec33a71ae"
+      },
+      {
+        "url": "https://www.tryonenotch.com/_next/static/css/1b7f222514e6048d.css",
+        "sha256": "7879646c582b3133de1c59c982401f3370ed1f7c2044ee7d0e5ca58a9fdafaf4"
+      },
+      {
+        "url": "https://www.tryonenotch.com/_next/static/css/7003e6e7d1c5397f.css",
+        "sha256": "2826e3f761c263dc575c36455d21a9a5c64c9d988266a14fe98547a21c100265"
+      },
+      {
+        "url": "https://www.tryonenotch.com/_next/static/css/525feda2410e1208.css",
+        "sha256": "e90b61ffce88389cb6885b34fbcfb0acafac0fa345b7874d824b7888e72ed2a8"
+      },
+      {
+        "url": "https://www.tryonenotch.com/_next/static/css/234866dade49ec30.css",
+        "sha256": "8fcf8cbab02e9766b25893b2aaf3cd8a81902b4758b2e9abfab3bd23556d086f"
+      }
+    ]
+  },
+  "color": {
+    "surface.page": {
+      "value": "#ffffff",
+      "evidence": "CSS",
+      "source": "HomeVersionTwo_page; PillHero_root",
+      "note": "Nền trang và hero"
+    },
+    "surface.subtle": {
+      "value": "#f5f5f7",
+      "evidence": "CSS",
+      "source": "HomeFeatures_gray; HomeFeatures_features --tile",
+      "note": "Section xám; feature tile"
+    },
+    "surface.control": {
+      "value": "#e8e8ed",
+      "evidence": "CSS",
+      "source": "HomeFeatures_rail",
+      "note": "Rail của segmented control"
+    },
+    "text.primary": {
+      "value": "#1d1d1f",
+      "evidence": "CSS",
+      "source": "HomeFeatures_features --ink; PillHero_root",
+      "note": "Headline và nội dung nhấn mạnh"
+    },
+    "text.brand": {
+      "value": "#111211",
+      "evidence": "CSS",
+      "source": "HomeVersionTwo_page --v2-ink; PillHero_button",
+      "note": "Navbar và CTA chính"
+    },
+    "text.secondary": {
+      "value": "#6e6e73",
+      "evidence": "CSS",
+      "source": "PillHero_copy; HomeFeatures_features --muted",
+      "note": "Mô tả hero và feature"
+    },
+    "text.tertiary": {
+      "value": "#86868b",
+      "evidence": "CSS",
+      "source": "PillHero_requirement; HomeFeatures_eyebrow",
+      "note": "Metadata, eyebrow"
+    },
+    "text.nav": {
+      "value": "#666764",
+      "evidence": "CSS",
+      "source": "HomeVersionTwo_notchHeader --v2-muted; faqAnswer",
+      "note": "Navigation và FAQ answer"
+    },
+    "accent.blue": {
+      "value": "#4a80e8",
+      "evidence": "CSS",
+      "source": "HomeVersionTwo_page --v2-accent",
+      "note": "Focus, FAQ, accent V2"
+    },
+    "accent.handwriting": {
+      "value": "#1f6fe5",
+      "evidence": "CSS",
+      "source": "PillHero_freeNote; PillHero_freeNoteArrow",
+      "note": "Nét viết tay và mũi tên hero"
+    },
+    "accent.link": {
+      "value": "#0066cc",
+      "evidence": "CSS",
+      "source": "HomeFeatures_moreLink a",
+      "note": "Link tới toàn bộ tính năng"
+    },
+    "accent.tools": {
+      "value": "#096ee8",
+      "evidence": "CSS",
+      "source": "HomeFeatures_toolsLineSmall em; toolsLineMain strong",
+      "note": "Từ nhấn trong headline tools"
+    },
+    "accent.marker": {
+      "value": "#34d96a",
+      "evidence": "CSS",
+      "source": "HomeFeatures_marker::before SVG fill",
+      "note": "Marker minh họa trên headline"
+    },
+    "accent.markerSoft": {
+      "value": "#a7efbd",
+      "evidence": "CSS",
+      "source": "HomeFeatures_toolsHighlight::before",
+      "note": "Vệt highlight trong tools"
+    },
+    "pricing.free": {
+      "value": "#48484a",
+      "evidence": "CSS",
+      "source": "PricingPage_showcase --free",
+      "note": "Tên gói miễn phí"
+    },
+    "pricing.pro": {
+      "value": "#7c3aed",
+      "evidence": "CSS",
+      "source": "PricingPage_showcase --pro",
+      "note": "Tên gói, CTA và viền Pro"
+    },
+    "pricing.supporter": {
+      "value": "#d97706",
+      "evidence": "CSS",
+      "source": "PricingPage_showcase --supporter",
+      "note": "Tên gói và CTA Supporter"
+    },
+    "text.end": {
+      "value": "#334558",
+      "evidence": "CSS",
+      "source": "EndCollageSection_title",
+      "note": "Tiêu đề CTA cuối trang"
+    }
+  },
+  "font": {
+    "sans": {
+      "value": "SN Pro",
+      "evidence": "CSS",
+      "source": "@font-face SN Pro / snPro",
+      "note": "Variable normal and italic, weight 200–900; runtime uses snPro alias."
+    },
+    "handwriting": {
+      "value": "Pecita",
+      "evidence": "CSS",
+      "source": "@font-face Pecita; PillHero_freeNote; PillHero_lockupWord",
+      "note": "Source file is Pecita-latin.woff2. Patrick Hand is also declared globally but is not the hero handwriting."
+    },
+    "sansUrl": "https://www.tryonenotch.com/fonts/SNPro-Variable.woff2",
+    "italicUrl": "https://www.tryonenotch.com/fonts/SNPro-Italic-Variable.woff2",
+    "handwritingUrl": "https://www.tryonenotch.com/fonts/Pecita-latin.woff2"
+  },
+  "typography": {
+    "hero": {
+      "source": "PillHero_title",
+      "weight": 600,
+      "mobile": {
+        "maxWidth": 734,
+        "size": "40px",
+        "lineHeight": 1.1,
+        "letterSpacing": "0"
+      },
+      "tablet": {
+        "maxWidth": 1068,
+        "size": "56px",
+        "lineHeight": 1.0714285714,
+        "letterSpacing": "-0.005em"
+      },
+      "desktop": {
+        "size": "72px",
+        "lineHeight": 1.0555555556,
+        "letterSpacing": "-0.00086em"
+      },
+      "wide": {
+        "minWidth": 1441,
+        "size": "80px",
+        "lineHeight": 1.05,
+        "letterSpacing": "-0.015em"
+      }
+    },
+    "section": {
+      "source": "HomeFeatures_headline; PricingPage_embedded heroTitle",
+      "size": "clamp(38px, 5.5vw, 72px)",
+      "weight": 600,
+      "lineHeight": 1.08,
+      "letterSpacing": "-0.035em"
+    },
+    "gallery": {
+      "source": "HomeFeatures_galleryTitle",
+      "size": "clamp(36px, 4.6vw, 56px)",
+      "weight": 600,
+      "lineHeight": 1.07,
+      "letterSpacing": "-0.035em"
+    },
+    "featureLede": {
+      "source": "HomeFeatures_lede",
+      "size": "clamp(17px, 1.5vw, 21px)",
+      "weight": 500,
+      "lineHeight": 1.45,
+      "letterSpacing": "-0.01em"
+    },
+    "heroCopy": {
+      "source": "PillHero_copy",
+      "size": "21px",
+      "weight": 400,
+      "lineHeight": 1.381002381,
+      "letterSpacing": "0.011em",
+      "wideSize": "28px at min-width:1441px"
+    },
+    "featureCardTitle": {
+      "source": "HomeFeatures_tileText h3",
+      "size": "26px",
+      "mobileSize": "22px",
+      "weight": 600,
+      "lineHeight": 1.15,
+      "letterSpacing": "-0.025em"
+    },
+    "pricingName": {
+      "source": "PricingPage_planName",
+      "size": "32px",
+      "weight": 700,
+      "letterSpacing": "-0.03em",
+      "lineHeight": "inherits 1.6"
+    },
+    "pricingAmount": {
+      "source": "PricingPage_price",
+      "size": "54px",
+      "mobileSize": "46px at max-width:640px",
+      "weight": 800,
+      "lineHeight": 1.05,
+      "letterSpacing": "-0.04em"
+    },
+    "handwrittenNote": {
+      "source": "PillHero_freeNote",
+      "size": "26px",
+      "mobileSize": "23px",
+      "weight": 400,
+      "lineHeight": 1,
+      "rotation": "-4deg"
+    },
+    "toolsHeading": {
+      "source": "HomeFeatures_toolsLineSmall; toolsLineMain",
+      "weight": 630,
+      "firstLine": "clamp(58px, 6.2vw, 80px)",
+      "secondLine": "clamp(40px, 5.9vw, 78px)",
+      "mobileFirst": "clamp(42px, 11vw, 62px)",
+      "mobileSecond": "clamp(25px, 7.8vw, 34px)",
+      "note": "Read child spans, not the inherited 24px computed size of the parent h2. Localized variant has separate overrides when its class is present."
+    }
+  },
+  "layout": {
+    "navMax": "1280px",
+    "heroMax": "1300px",
+    "heroWidth": "calc(100% - 40px)",
+    "heroTop": "150px; 120px at <=734px",
+    "featureHeadMax": "900px",
+    "featureGridMax": "1120px",
+    "smallFeatureGridMax": "960px",
+    "pricingWrapper": "min(1180px, calc(100% - 40px)); calc(100% - 28px) at <=700px",
+    "pricingGridMax": "1200px within wrapper; 560px at <=1020px",
+    "faqWidth": "min(1024px, calc(100% - 40px))",
+    "sectionPadding": "140px 22px 20px; top 110px at <=1068px; 84px 16px 12px at <=734px",
+    "graySection": "margin-top 110px; desktop padding-bottom 110px, overridden to 12px by <=734px section rule",
+    "spacingObserved": [
+      2,
+      4,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      48,
+      56,
+      58,
+      60,
+      64,
+      68,
+      70,
+      84,
+      90,
+      110,
+      140,
+      150,
+      180
+    ],
+    "spacingNote": "An optional normalized scale may use 4/8/12/16/20/24/32/48/64/84/110/140; the original CSS is not a strict 8-point system."
+  },
+  "radius": {
+    "kbd": "6px",
+    "navItem": "8px",
+    "downloadBadge": "10px",
+    "languageMenu": "14px",
+    "mobileSheet": "16px",
+    "faq": "19px; 16px at <=700px",
+    "smallFeature": "20px",
+    "featureTile": "28px; 22px at <=734px",
+    "mediaFrame": "28px; 20px at <=734px",
+    "pricingCard": "32px",
+    "pricingCTA": "25px",
+    "pill": "999px (hero uses 980px)"
+  },
+  "shadow": {
+    "activeTab": {
+      "value": "0 2px 8px rgba(0,0,0,.08)",
+      "evidence": "CSS",
+      "source": "HomeFeatures_tabActive"
+    },
+    "heroLockup": {
+      "value": "0 12px 30px rgba(0,0,0,.22)",
+      "evidence": "CSS",
+      "source": "PillHero_lockup"
+    },
+    "proCard": {
+      "value": "0 30px 70px rgba(124,58,237,.12), 0 2px 10px rgba(0,0,0,.04)",
+      "evidence": "CSS",
+      "source": "PricingPage_planPro.PricingPage_plan"
+    },
+    "paidCTA": {
+      "value": "0 10px 24px color-mix(in srgb, var(--tint) 32%, transparent)",
+      "evidence": "CSS",
+      "source": "PricingPage_planAction paid variants"
+    },
+    "notchDevice": {
+      "value": "0 18px 28px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.08)",
+      "evidence": "CSS",
+      "source": "HomeFeatures_notchTileScreen"
+    }
+  },
+  "motion": {
+    "hover": "150–250ms depending on component",
+    "reveal": "900ms, translateY(32px) → 0, cubic-bezier(.16,1,.3,1)",
+    "gallery": "900ms cubic-bezier(.4,0,.1,1)",
+    "caption": "500ms cubic-bezier(.16,1,.3,1)",
+    "navCollapse": "460ms cubic-bezier(.16,1,.3,1), media min-width:768px",
+    "navGlassFade": "320ms ease",
+    "faqExpand": "320ms cubic-bezier(.2,.75,.22,1), grid rows 0fr → 1fr",
+    "faqPlus": "220ms ease, rotate(45deg) when open",
+    "orbitDurations": "120s / 110s / 82s; decorative continuous animation",
+    "scrollStage": "NotchFlyShowcase section height 760vh with sticky 100vh; HomeFeatures zoom stage 260vh, subject to responsive/reduced-motion overrides",
+    "reducedMotion": "CSS explicitly disables/reduces reveal, gallery/zoom and FAQ motion; complete video behavior not verified"
+  },
+  "breakpoints": [
+    {
+      "query": "max-width:640px",
+      "effect": "Pricing card padding 30/22/26px; amount 46px"
+    },
+    {
+      "query": "max-width:700px",
+      "effect": "FAQ stacks to one column; FAQ radius 16px; pricing wrapper width 100%-28px"
+    },
+    {
+      "query": "max-width:734px",
+      "effect": "Hero 40px, CTA full width; feature tiles stack; tabs 34px; section padding 84/16/12px"
+    },
+    {
+      "query": "max-width:768px",
+      "effect": "Hide desktop navigation and nav download; show burger"
+    },
+    {
+      "query": "max-width:1020px",
+      "effect": "Pricing 3 columns → 1 column, max-width 560px"
+    },
+    {
+      "query": "max-width:1068px",
+      "effect": "Hero 56px; gallery heading stacks; small feature grid 4 → 2 columns"
+    },
+    {
+      "query": "min-width:1441px",
+      "effect": "Hero 80px, supporting copy 28px"
+    }
+  ],
+  "component": {
+    "primaryCTA": {
+      "height": "56px derived from 18px × 2 padding + 20px line-height",
+      "padding": "18px 31px",
+      "radius": "980px",
+      "font": "17px / 400",
+      "background": "#111211",
+      "foreground": "#fff",
+      "hover": "#2a2b2a",
+      "transition": "background .2s ease"
+    },
+    "compactCTA": {
+      "height": "32px",
+      "padding": "0 14px",
+      "radius": "999px",
+      "font": "13px / 600"
+    },
+    "segmentedControl": {
+      "track": "#e8e8ed; padding 4px; gap 2px; radius 999px",
+      "tab": "38px height, padding 0 18px, font 15px/600; mobile 34px, 0 13px, 14px",
+      "selected": "white background, #1d1d1f text, shadow 0 2px 8px black/8%",
+      "overflow": "horizontal auto; scrollbar hidden",
+      "semantics": "role=tablist/tab; aria-selected changes verified"
+    },
+    "textTabs": {
+      "font": "17px/600; mobile 15px",
+      "gap": "34px; mobile 22px",
+      "selected": "#1d1d1f; 2px bottom border",
+      "rail": "1px black/10% bottom border; overflow-x:auto"
+    },
+    "galleryControls": {
+      "track": "56px height (48px mobile), padding 0 20px (16px mobile), radius 28px, #e8e8ed/80%",
+      "dot": "8×8px; selected width 48px",
+      "playPause": "56×56px; mobile 48×48px; circle"
+    },
+    "featureTile": {
+      "grid": "2 equal columns; 20px gap; 1 column at <=734px",
+      "radius": "28px; 22px mobile",
+      "surface": "#f5f5f7, white on gray sections",
+      "contentPadding": "36px 36px 0; tablet 30px 28px 0; mobile 26px 22px 0"
+    },
+    "smallFeature": {
+      "grid": "4 columns, gap 14px; 2 columns <=1068px; gap 10px <=734px",
+      "padding": "18px 18px 20px; mobile 18px 16px 20px",
+      "radius": "20px",
+      "icon": "30px circle",
+      "title": "16px / 650",
+      "body": "14px / 500 / 1.45"
+    },
+    "pricingCard": {
+      "grid": "3 columns, gap 24px; 1 column <=1020px",
+      "padding": "36px 34px 32px; <=640px 30px 22px 26px",
+      "radius": "32px",
+      "pro": "white/86%, 1px purple/14%, blur12px, purple shadow",
+      "CTA": "50px height, radius25px, 16px/700"
+    },
+    "faq": {
+      "item": "1px border #111211/5.5%, radius19px; mobile16px",
+      "question": "min-height74px (68px mobile), 16px/680 (15px mobile)",
+      "answer": "14px/1.68; mobile13px",
+      "expanded": "border #4a80e8/11%, white/82%; plus rotates45deg",
+      "behavior": "Opening a different question collapsed the initially open item; verified"
+    },
+    "replay": {
+      "height": "32px",
+      "padding": "0 13px",
+      "radius": "999px",
+      "background": "rgba(30,30,34,.62)",
+      "foreground": "#fff",
+      "backdrop": "blur(12px) saturate(1.6)"
+    },
+    "nav": {
+      "position": "fixed, top0, z50",
+      "brand": "24px icon, 17px wordmark; text bold child750",
+      "link": "32px height, 13.5px/450, radius8px, padding0 10px",
+      "hover": "ink text; #111211/5% background",
+      "scroll": "collapse to var(--nav-collapsed-width,920px); custom notch clip-path + glass filter",
+      "glass": "blur(var(--nav-lens-blur,3px)) saturate180%, SVG filter; WebKit supports rule uses blur20px",
+      "menu": "language popup width196px, radius14px, blur20px; mobile sheet radius16px"
+    },
+    "focus": {
+      "global": "2px solid var(--blue=#3d73ed), offset2px, radius4px",
+      "faq": "3px solid #4a80e8, offset -3px",
+      "footerCTA": "3px solid #4a80e8, offset4px"
+    }
+  }
+}

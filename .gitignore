@@ -1,0 +1,8 @@
+.dart_tool/
+build/
+coverage/
+pubspec.lock
+.flutter-plugins-dependencies
+__pycache__/
+*.pyc
+.DS_Store

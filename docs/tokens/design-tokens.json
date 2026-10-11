@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "name": "Learn Design System",
+    "version": "1.3.0",
+    "updatedAt": "2026-10-11",
+    "status": "design-specification",
+    "unit": "CSS px; Flutter uses equivalent logical px with text scaling",
+    "provenance": {
+      "color": "revised: muted iris accent replaces blue; editorial neutral actions and surfaces preserved",
+      "typography": "adapted: OneNotch SN Pro, display rhythm; application roles are new",
+      "geometry": "adapted: OneNotch rounded cards/pills and section rhythm",
+      "interaction": "new: accessible application controls/media",
+      "primitivePalettes": "new: reference ramps, not directly assigned to components"
+    }
+  },
+  "color": {
+    "primitive": {
+      "violet": {
+        "50": "#FAF8FC",
+        "100": "#F3EFF8",
+        "200": "#EAE3F2",
+        "300": "#D3C5E5",
+        "400": "#BAA6D4",
+        "500": "#A18BBC",
+        "600": "#8770A7",
+        "700": "#705A96",
+        "800": "#594779",
+        "900": "#433454",
+        "950": "#2D2239"
+      },
+      "neutral": {
+        "50": "#FAFAF9",
+        "100": "#F2F1EE",
+        "200": "#E7E6E3",
+        "300": "#D2D1CC",
+        "400": "#BABAB6",
+        "500": "#8B8A87",
+        "600": "#646466",
+        "700": "#484846",
+        "800": "#323231",
+        "900": "#20201F",
+        "950": "#151515"
+      }
+    },
+    "themes": {
+      "light": {
+        "background": "#FFFFFF",
+        "background-subtle": "#FAFAF9",
+        "surface": "#FFFFFF",
+        "surface-raised": "#FFFFFF",
+        "surface-hover": "#F2F1EE",
+        "text-primary": "#1D1D1F",
+        "text-secondary": "#646466",
+        "text-placeholder": "#6D6D72",
+        "border-subtle": "#E7E6E3",
+        "border-control": "#8B8A87",
+        "input-background": "#FFFFFF",
+        "primary": "#111211",
+        "primary-hover": "#303034",
+        "primary-pressed": "#000000",
+        "on-primary": "#FFFFFF",
+        "link": "#705A96",
+        "link-hover": "#594779",
+        "selected-background": "#F3EFF8",
+        "selected-hover": "#EAE3F2",
+        "selected-foreground": "#68528D",
+        "focus-ring": "#7D66A1",
+        "disabled-background": "#EFEEEB",
+        "disabled-foreground": "#8C8C8A",
+        "progress-track": "#E6E7E9",
+        "progress-active": "#8871A8",
+        "success-background": "#EAF7EF",
+        "success-foreground": "#166534",
+        "warning-background": "#FFF4DD",
+        "warning-foreground": "#92400E",
+        "error-background": "#FFF0EE",
+        "error-foreground": "#B42318",
+        "info-background": "#EEF4FF",
+        "info-foreground": "#1D4ED8",
+        "danger": "#B42318",
+        "danger-hover": "#912018",
+        "on-danger": "#FFFFFF",
+        "peach-background": "#F1E5D5",
+        "peach-foreground": "#5B493A",
+        "lavender-decoration": "#DAD7E5",
+        "overlay": "#15151566",
+        "shadow": "#1D1D1F14"
+      },
+      "dark": {
+        "background": "#151515",
+        "background-subtle": "#1B1B1A",
+        "surface": "#20201F",
+        "surface-raised": "#282827",
+        "surface-hover": "#323231",
+        "text-primary": "#F4F3EF",
+        "text-secondary": "#BABAB6",
+        "text-placeholder": "#A8A8A3",
+        "border-subtle": "#3E3E3B",
+        "border-control": "#85857F",
+        "input-background": "#20201F",
+        "primary": "#F3F2ED",
+        "primary-hover": "#FFFFFF",
+        "primary-pressed": "#DFDED7",
+        "on-primary": "#1D1D1F",
+        "link": "#C4B2DF",
+        "link-hover": "#DED0F0",
+        "selected-background": "#2D2735",
+        "selected-hover": "#37303F",
+        "selected-foreground": "#D3C5E5",
+        "focus-ring": "#C9B8E4",
+        "disabled-background": "#333330",
+        "disabled-foreground": "#858580",
+        "progress-track": "#3E3E3B",
+        "progress-active": "#BAA6D4",
+        "success-background": "#142B20",
+        "success-foreground": "#86EFAC",
+        "warning-background": "#332710",
+        "warning-foreground": "#FCD34D",
+        "error-background": "#351B23",
+        "error-foreground": "#FDA29B",
+        "info-background": "#172840",
+        "info-foreground": "#93C5FD",
+        "danger": "#FDA29B",
+        "danger-hover": "#FEC3BE",
+        "on-danger": "#351B23",
+        "peach-background": "#3D332A",
+        "peach-foreground": "#EED9BF",
+        "lavender-decoration": "#6B6B76",
+        "overlay": "#080808B3",
+        "shadow": "#0000004D"
+      }
+    },
+    "roles": {
+      "background": "Nền trang",
+      "background-subtle": "Section xen kẽ",
+      "surface": "Card, trình nghe",
+      "surface-raised": "Menu, popover, modal",
+      "surface-hover": "Hàng/card khi hover",
+      "text-primary": "Tiêu đề, nội dung",
+      "text-secondary": "Mô tả, metadata, icon",
+      "text-placeholder": "Placeholder ô nhập",
+      "border-subtle": "Viền trang trí, divider",
+      "border-control": "Viền nhận biết ô nhập",
+      "input-background": "Nền ô nhập",
+      "primary": "Nút chính",
+      "primary-hover": "Nút chính khi hover",
+      "primary-pressed": "Nút chính khi nhấn",
+      "on-primary": "Chữ/icon trên nút chính",
+      "link": "Link, icon tương tác",
+      "link-hover": "Link khi hover",
+      "selected-background": "Chip, từ/đoạn được chọn",
+      "selected-hover": "Chip được chọn khi hover",
+      "selected-foreground": "Chữ/icon trên vùng chọn",
+      "focus-ring": "Vòng focus bàn phím",
+      "disabled-background": "Nền điều khiển disabled",
+      "disabled-foreground": "Chữ/icon disabled",
+      "progress-track": "Waveform/track chưa nghe",
+      "progress-active": "Tiến độ/waveform đã nghe",
+      "success-background": "Nền thông báo thành công",
+      "success-foreground": "Chữ/icon thành công",
+      "warning-background": "Nền cảnh báo",
+      "warning-foreground": "Chữ/icon cảnh báo",
+      "error-background": "Nền thông báo lỗi",
+      "error-foreground": "Chữ/icon lỗi, viền lỗi",
+      "info-background": "Nền thông tin",
+      "info-foreground": "Chữ/icon thông tin",
+      "danger": "Nút thao tác nguy hiểm",
+      "danger-hover": "Nút nguy hiểm khi hover",
+      "on-danger": "Chữ/icon trên nút nguy hiểm",
+      "peach-background": "Bìa bài nghe, minh họa",
+      "peach-foreground": "Chữ/icon trên nền đào",
+      "lavender-decoration": "Trang trí, không dùng làm chữ",
+      "overlay": "Lớp phủ dưới modal",
+      "shadow": "Màu bóng, cần hình học riêng"
+    }
+  },
+  "font": {
+    "sans": "\"SN Pro\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "handwriting": "\"Pecita\", \"SN Pro\", system-ui, sans-serif",
+    "mono": "ui-monospace, \"SFMono-Regular\", Consolas, monospace"
+  },
+  "typography": {
+    "display": {
+      "size": 40,
+      "lineHeight": 1.1,
+      "weight": 600,
+      "tracking": "-0.005em",
+      "tabletSize": 56,
+      "desktopSize": 72,
+      "wideSize": 80
+    },
+    "section": {
+      "size": 32,
+      "lineHeight": 1.12,
+      "weight": 600,
+      "tracking": "-0.035em",
+      "tabletSize": 40,
+      "desktopSize": 56
+    },
+    "h1": {
+      "size": 32,
+      "lineHeight": 1.2,
+      "weight": 600,
+      "tracking": "-0.025em"
+    },
+    "h2": {
+      "size": 24,
+      "lineHeight": 1.25,
+      "weight": 600,
+      "tracking": "-0.02em"
+    },
+    "h3": {
+      "size": 20,
+      "lineHeight": 1.3,
+      "weight": 600,
+      "tracking": "-0.015em"
+    },
+    "card-title": {
+      "size": 22,
+      "lineHeight": 1.2,
+      "weight": 600,
+      "tracking": "-0.025em",
+      "desktopSize": 26
+    },
+    "body": {
+      "size": 16,
+      "lineHeight": 1.5,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "body-large": {
+      "size": 18,
+      "lineHeight": 1.6,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "transcript": {
+      "size": 18,
+      "lineHeight": 1.7,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "small": {
+      "size": 14,
+      "lineHeight": 1.5,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "caption": {
+      "size": 12,
+      "lineHeight": 1.5,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "label": {
+      "size": 14,
+      "lineHeight": 1.4,
+      "weight": 500,
+      "tracking": "0"
+    },
+    "handwriting": {
+      "size": 23,
+      "lineHeight": 1.2,
+      "weight": 400,
+      "tracking": "0",
+      "desktopSize": 26
+    }
+  },
+  "spacing": {
+    "0": 0,
+    "0-5": 2,
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48,
+    "16": 64,
+    "21": 84,
+    "27-5": 110,
+    "35": 140
+  },
+  "radius": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "card": 20,
+    "panel": 24,
+    "feature": 28,
+    "hero": 32,
+    "pill": 9999
+  },
+  "borderWidth": {
+    "default": 1,
+    "strong": 2,
+    "focus": 2
+  },
+  "size": {
+    "target": 44,
+    "control-sm": 32,
+    "control-md": 44,
+    "control-lg": 56,
+    "icon-sm": 16,
+    "icon-md": 20,
+    "icon-lg": 24,
+    "icon-xl": 32,
+    "nav-mobile": 64,
+    "nav-desktop": 72,
+    "mini-player": 72,
+    "sidebar": 256
+  },
+  "layout": {
+    "gutter-compact": 16,
+    "gutter-medium": 24,
+    "gutter-expanded": 32,
+    "grid-gap": 24,
+    "container-content": 1120,
+    "container-wide": 1280,
+    "container-reading": 760,
+    "container-form": 480,
+    "section-compact": 84,
+    "section-medium": 110,
+    "section-expanded": 140
+  },
+  "breakpoint": {
+    "minimum": 320,
+    "medium": 600,
+    "expanded": 900,
+    "wide": 1200,
+    "marketing-tablet": 735,
+    "marketing-desktop": 1069,
+    "marketing-xl": 1441
+  },
+  "motion": {
+    "duration": {
+      "instant": 0,
+      "fast": 120,
+      "base": 200,
+      "slow": 320,
+      "reveal": 500
+    },
+    "easing": {
+      "standard": "cubic-bezier(.2,0,0,1)",
+      "enter": "cubic-bezier(.16,1,.3,1)",
+      "exit": "cubic-bezier(.4,0,1,1)"
+    }
+  },
+  "layer": {
+    "base": 0,
+    "sticky": 10,
+    "dropdown": 20,
+    "overlay": 30,
+    "modal": 40,
+    "popover": 50,
+    "tooltip": 60,
+    "toast": 70
+  },
+  "shadow": {
+    "none": "none",
+    "sm": "0 2px 8px var(--vl-shadow)",
+    "md": "0 8px 24px var(--vl-shadow)",
+    "lg": "0 24px 64px var(--vl-shadow)"
+  }
+}
