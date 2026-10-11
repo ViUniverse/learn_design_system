@@ -1,6 +1,6 @@
 name: learn_design_system
 description: Themes, controls and adaptive layouts for Flutter learning apps.
-version: 0.1.0
+version: 0.1.1
 publish_to: none
 repository: https://github.com/ViUniverse/learn_design_system
 environment:

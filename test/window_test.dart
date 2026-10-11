@@ -222,33 +222,36 @@ void main() {
       },
     );
   }
-  test('A native trailing rail respects an off-center hinge and RTL', () {
-    final layout = LearnPaneLayout.resolve(
-      size: const Size(1000, 700),
-      textScaler: TextScaler.noScaling,
-      navigationSide: BarSide.end,
-      features: const [
-        ui.DisplayFeature(
-          bounds: Rect.fromLTWH(420, 0, 24, 700),
-          type: ui.DisplayFeatureType.hinge,
-          state: ui.DisplayFeatureState.postureHalfOpened,
-        ),
-      ],
-    );
-    expect(layout.browse, const Rect.fromLTWH(444, 0, 556, 700));
-    expect(layout.detail, const Rect.fromLTWH(0, 0, 420, 700));
-    expect(layout.navigationOnRight, true);
-    expect(layout.split, true);
-    expect(
-      LearnPaneLayout.resolve(
+  test(
+    'A native trailing rail does not reorder the off-center hinge panes',
+    () {
+      final layout = LearnPaneLayout.resolve(
         size: const Size(1000, 700),
         textScaler: TextScaler.noScaling,
-        direction: TextDirection.rtl,
         navigationSide: BarSide.end,
-      ).navigationOnRight,
-      false,
-    );
-  });
+        features: const [
+          ui.DisplayFeature(
+            bounds: Rect.fromLTWH(420, 0, 24, 700),
+            type: ui.DisplayFeatureType.hinge,
+            state: ui.DisplayFeatureState.postureHalfOpened,
+          ),
+        ],
+      );
+      expect(layout.browse, const Rect.fromLTWH(0, 0, 420, 700));
+      expect(layout.detail, const Rect.fromLTWH(444, 0, 556, 700));
+      expect(layout.navigationOnRight, true);
+      expect(layout.split, true);
+      expect(
+        LearnPaneLayout.resolve(
+          size: const Size(1000, 700),
+          textScaler: TextScaler.noScaling,
+          direction: TextDirection.rtl,
+          navigationSide: BarSide.end,
+        ).navigationOnRight,
+        false,
+      );
+    },
+  );
 
   test('Subpixel fold coordinates still separate the whole surface', () {
     final layout = LearnPaneLayout.resolve(
@@ -286,8 +289,42 @@ void main() {
       expect(layout.navigationWidth, 0);
       expect(layout.edgeNavigationFrame!.left, 867);
       expect(layout.split, true);
-      expect(layout.browse.left, 495.5);
-      expect(layout.detail.right, 455.5);
+      expect(layout.browse.right, 455.5);
+      expect(layout.detail.left, 495.5);
+      const media = MediaQueryData(
+        size: Size(951, 669),
+        viewPadding: EdgeInsets.only(right: 84),
+      );
+      expect(
+        mediaQueryForPane(media, layout.browse, media.size).viewPadding.right,
+        0,
+      );
+      expect(
+        mediaQueryForPane(media, layout.detail, media.size).viewPadding.right,
+        84,
+      );
+    },
+  );
+
+  test(
+    'Flat master/detail order is independent of navigation edge and RTL',
+    () {
+      for (final direction in TextDirection.values) {
+        for (final side in BarSide.values) {
+          final layout = LearnPaneLayout.resolve(
+            size: const Size(951, 669),
+            textScaler: TextScaler.noScaling,
+            safeArea: const EdgeInsets.only(right: 84),
+            navigationSide: side,
+            direction: direction,
+          );
+          expect(layout.split, true);
+          expect(layout.browse.left, 0);
+          expect(layout.browse.width - layout.navigationWidth, 320);
+          expect(layout.browse.right, lessThan(layout.detail.left));
+          expect(layout.detail.right, 951);
+        }
+      }
     },
   );
 

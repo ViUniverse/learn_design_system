@@ -56,6 +56,11 @@ nếu đoạn ngắn. Không trừ thêm một cột rail khỏi nội dung. C�
 Directionality hỗ trợ cả cạnh trái. Hint không có dải đủ chỗ thì dùng navigation
 ngang. Thanh dọc dùng icon, vẫn giữ tooltip và tên cho accessibility.
 
+Thứ tự pane độc lập với cạnh navbar: khi chia ngang, Home/master ở bên trái,
+player/detail ở bên phải, kể cả khi navbar ở cạnh phải hoặc Directionality là
+RTL. Bản lề giữ hai pane ở đúng hai phía; tabletop đặt Home trên, player dưới.
+Safe area của camera bên phải chỉ áp vào pane bên phải.
+
 Không có hint native: rail khi vùng dùng được rộng ít nhất 600 và cao ít nhất
 480 logical px, chữ không quá 1.5×. Compact height, chữ lớn và fold ngang
 half-open (tabletop) dùng navigation ngang trong pane. Đây là policy của Vi

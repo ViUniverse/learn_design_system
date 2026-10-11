@@ -64,22 +64,11 @@ class LearnPaneLayout {
       direction: direction,
       viewInsets: viewInsets,
     );
-    Rect mirror(Rect rect) => Rect.fromLTRB(
-      size.width - rect.right,
-      rect.top,
-      size.width - rect.left,
-      rect.bottom,
-    );
+    // Navigation edge hints position controls, never reorder master/detail.
     LearnPaneLayout placed(LearnPaneLayout layout) => LearnPaneLayout(
-      browse: onRight && layout.axis == Axis.horizontal && !layout.separated
-          ? mirror(layout.browse)
-          : layout.browse,
-      detail: onRight && layout.axis == Axis.horizontal && !layout.separated
-          ? mirror(layout.detail)
-          : layout.detail,
-      fullBrowse: onRight && layout.axis == Axis.horizontal && !layout.separated
-          ? mirror(layout.fullBrowse)
-          : layout.fullBrowse,
+      browse: layout.browse,
+      detail: layout.detail,
+      fullBrowse: layout.fullBrowse,
       split: layout.split,
       navigationWidth: layout.navigationWidth,
       axis: layout.axis,
@@ -108,8 +97,8 @@ class LearnPaneLayout {
           bounds.right < size.width) {
         final left = Rect.fromLTRB(0, 0, bounds.left, size.height);
         final right = Rect.fromLTRB(bounds.right, 0, size.width, size.height);
-        final browse = onRight ? right : left;
-        final detail = onRight ? left : right;
+        final browse = left;
+        final detail = right;
         // A rail must fit its own pane, not just the full unfolded display.
         // Fall back to bottom destinations before sacrificing readable content.
         final paneNav = usableWidth(browse) >= nav + masterMin ? nav : 0.0;
@@ -169,7 +158,7 @@ class LearnPaneLayout {
       masterMin,
       math.max(masterMin, 440 * scale),
     );
-    final divider = nav + master + (onRight ? safeArea.right : safeArea.left);
+    final divider = nav + master + safeArea.left;
     return placed(
       LearnPaneLayout(
         browse: Rect.fromLTRB(0, 0, divider, size.height),
