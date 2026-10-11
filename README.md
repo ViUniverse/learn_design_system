@@ -47,7 +47,7 @@ controls; implementation coverage is recorded separately.
 | --- | --- |
 | Foundation | `lightTokens`, `darkTokens`, `learnTheme`, `LearnColors`, `LearnFreeSpace`, `LearnToolbarLayout` |
 | Component | `LearnButton`, `LearnIconButton`, `LearnInput`, `LearnSelect`, `LearnMenu`, `showLearnDialog`, `LearnNavItem`, content cards/art/labels, listening progress |
-| Compose | `LearnWindow`, `LearnPaneLayout`, `LearnNavigationLayout`, `LearnAreaClipper`, `mediaQueryForPane`, `LearnToolbar`, `LearnNavigationBar`, `LearnNavigationRail`, `LearnScrollAnchor` |
+| Compose | `LearnWindow`, `LearnPaneLayout`, `LearnNavigationLayout`, `LearnScrollLayout`, `LearnAreaClipper`, `mediaQueryForPane`, `LearnToolbar`, `LearnNavigationBar`, `LearnNavigationRail`, `LearnScrollAnchor` |
 
 The catalog contains 16 foundation, 64 component and 8 compose contracts. This
 table describes implemented APIs, not a claim that every catalog item is a
@@ -69,6 +69,14 @@ native regions. Place pane SafeAreas inside it. `LearnWindowData.maybeOf(context
 exposes readiness, active areas and the native navigation-side hint. The app
 passes size, text scale, safe padding and display features to `LearnPaneLayout`;
 it retains its controllers while moving existing content between panes.
+
+For scrolling pages, keep the viewport edge-to-edge and add
+`LearnScrollLayout.topPadding` to the initial content padding. Wrap only the first
+header with `layout.header(...)`. Pass the header frame in window coordinates,
+the pane/window top insets, current areas and `topRegionsReady`. Detailed iOS
+regions may allow that header beside the status bar. An Android camera cutout
+alone cannot establish where status icons are, so the OS inset remains the
+fallback. `LearnWindow` protects status icon contrast over scrolled content.
 
 See the [adaptive window contract](docs/compose/adaptive-window.md) for fallback,
 coordinate and keyboard limits. Native measurements do not select a UX for the

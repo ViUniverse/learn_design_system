@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:foldable_info/foldable_info.dart';
 import '../foundation/theme.dart';
+import 'scroll_layout.dart';
 
 /// Measurements used by compositions, scoped to the Flutter view and box.
 class LearnWindowData {
@@ -15,12 +16,16 @@ class LearnWindowData {
     this.navigationSide,
     this.nativeReady = false,
     this.origin = Offset.zero,
+    this.topRegionsReady = false,
   });
   final Size size;
   final List<ViewArea> areas;
   final BarSide? navigationSide;
   final bool nativeReady;
   final Offset origin;
+
+  /// True only for current, available iOS reserved-region measurements.
+  final bool topRegionsReady;
 
   static LearnWindowData? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<_WindowScope>()?.data;
@@ -174,6 +179,16 @@ class _LearnWindowState extends State<LearnWindow> {
       final padding = nativePadding == null
           ? EdgeInsets.zero
           : localPadding(nativePadding);
+      final safeTop = math.max(media.padding.top, padding.top);
+      final topRegionsReady = current && data.ios.isReady && data.areas.isReady;
+      final cornerStatus = LearnScrollLayout.resolve(
+        headerFrame: Rect.fromLTWH(0, 0, box.maxWidth, safeTop),
+        safeTop: safeTop,
+        windowSafeTop: safeTop,
+        topRegionsReady: topRegionsReady,
+        areas: areas,
+        minimumWidth: 1,
+      ).usesTopRegions;
       return SizedBox(
         key: _box,
         width: box.maxWidth,
@@ -205,6 +220,7 @@ class _LearnWindowState extends State<LearnWindow> {
                 origin: _frame?.topLeft ?? Offset.zero,
                 areas: areas,
                 nativeReady: current,
+                topRegionsReady: topRegionsReady,
                 navigationSide: current ? data.ios.value?.barSide.value : null,
               ),
               child: MediaQuery(
@@ -221,7 +237,42 @@ class _LearnWindowState extends State<LearnWindow> {
                     ),
                   ),
                 ),
-                child: widget.child,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    widget.child,
+                    // Scrolling backgrounds may reach the edge. Keep system
+                    // icons legible without reserving a second layout row.
+                    if (safeTop > 0 && !cornerStatus)
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        height: safeTop + 12,
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            key: const ValueKey('learn-status-shade'),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  context.color('background'),
+                                  context
+                                      .color('background')
+                                      .withValues(alpha: .94),
+                                  context
+                                      .color('background')
+                                      .withValues(alpha: 0),
+                                ],
+                                stops: [0, safeTop / (safeTop + 12), 1],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -267,6 +318,7 @@ class _WindowScope extends InheritedWidget {
       oldWidget.data.size != data.size ||
       oldWidget.data.origin != data.origin ||
       oldWidget.data.nativeReady != data.nativeReady ||
+      oldWidget.data.topRegionsReady != data.topRegionsReady ||
       oldWidget.data.navigationSide != data.navigationSide ||
       !listEquals(oldWidget.data.areas, data.areas);
 }

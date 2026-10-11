@@ -1,6 +1,6 @@
 {
   "name": "Learn Design System specification audit",
-  "checkedAt": "2026-10-11T10:25:20.072766+00:00",
+  "checkedAt": "2026-10-11T12:29:42.512466+00:00",
   "status": "pass",
   "scope": "Written specification, generated tokens, local links and exact color pairs. No production widget behavior or device/screen-reader certification.",
   "coverage": {
@@ -18,8 +18,8 @@
     "Surfaces": 12
   },
   "markdownFiles": 96,
-  "linksChecked": 767,
-  "externalReferenceCount": 34,
+  "linksChecked": 769,
+  "externalReferenceCount": 36,
   "externalLinkScope": "Source URLs documented from research; this validator does not fetch websites.",
   "semanticColorRolesPerTheme": 41,
   "cssVariables": 188,

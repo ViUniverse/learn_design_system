@@ -10,6 +10,7 @@ export 'src/component/listening_progress.dart';
 export 'src/component/navigation.dart';
 export 'src/compose/pane_layout.dart';
 export 'src/compose/scroll_anchor.dart';
+export 'src/compose/scroll_layout.dart';
 export 'src/compose/window.dart';
 export 'src/compose/toolbar.dart';
 export 'src/compose/navigation.dart';

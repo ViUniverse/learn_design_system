@@ -75,6 +75,27 @@ không phải lỗ vật lý; để chúng transparent làm lộ mặt nền đe
 dung và hit testing tránh vật cản, nền app vẫn phủ tới cạnh. System bars
 transparent, icon đổi sáng/tối theo nền. App bật edge-to-edge lúc khởi tạo.
 
+## Status bar và nội dung cuộn
+
+Viewport cuộn phủ tới mép trên. Safe area trên được thêm vào **padding ban đầu
+của nội dung**, không thu nhỏ viewport bằng SafeArea trên: cuộn xuống sẽ không
+giữ một dải trắng rỗng cố định. Rail và controls cố định vẫn tránh system UI.
+`LearnWindow` tô lớp nền chuyển nhẹ dưới status bar để giữ tương phản icon khi
+nội dung cuộn qua; lớp này không nhận thao tác và không chiếm chiều cao layout.
+
+`LearnScrollLayout` chỉ tận dụng khoảng trống cạnh status bar khi snapshot hiện
+tại có **cả dữ liệu iOS và reserved regions sẵn sàng** (`topRegionsReady`). Nó
+trừ mọi vùng blocked ở cạnh trên khỏi hàng header, chọn đoạn rộng nhất còn đủ
+chỗ cho cỡ chữ hiện tại, thu hẹp riêng header đầu tiên và để body dưới vùng
+status. Frame header và các vùng cản phải cùng tọa độ window. Pane không chạm
+cạnh trên giữ inset cục bộ bằng 0.
+
+Android cung cấp camera cutout nhưng frame camera không đo toàn bộ icon status
+bar. Android, iPhone/iPad chưa có reserved regions, snapshot cũ, vùng inactive
+hoặc chữ quá lớn đều giữ top inset do OS cung cấp. Không dùng tên máy hay một
+chiều cao status bar cố định để bỏ inset. Player dùng cùng policy cho hàng
+toolbar, đồng thời `LearnToolbar` kiểm tra từng target với vùng cản thật.
+
 ## State và giới hạn
 
 Thay đổi geometry/theme không tạo controller phiên nghe mới. Animation thuộc
@@ -104,3 +125,5 @@ API hiện tại được liệt kê trong [README package](../../README.md). Sp
 - [Apple: Raise the bar with iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111462/) — native container, gợi ý cạnh dọc, icon và overflow.
 - [Android: Build adaptive navigation](https://developer.android.com/develop/adaptive-apps/guides/build-adaptive-navigation) — compact height và tabletop ưu tiên bottom navigation.
 - [Android: System bars](https://developer.android.com/design/ui/mobile/guides/foundations/system-bars) — nền system bars và tương phản icon.
+- [Apple: Design your apps for iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111461/) — background phủ tới cạnh, controls tránh safe area hoặc reserved regions.
+- [Android: Edge-to-edge design](https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge) — nội dung cuộn dưới system bars và bảo vệ tương phản.

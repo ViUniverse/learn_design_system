@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+- Add `LearnScrollLayout`: keep scroll viewports edge-to-edge while initial
+  content avoids system UI, using current iOS top regions when a header fits
+  beside the status bar.
+- Preserve the OS top inset when regions are missing, stale, inactive, too
+  narrow, or describe only an Android camera cutout.
+- Protect system icon contrast over scrolling content without a fixed blank
+  strip; expose `LearnWindowData.topRegionsReady` for the stricter readiness check.
+
 ## 0.1.1
 
 - Keep Home/master on the left and player/detail on the right, independently of
