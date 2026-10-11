@@ -47,7 +47,7 @@ controls; implementation coverage is recorded separately.
 | --- | --- |
 | Foundation | `lightTokens`, `darkTokens`, `learnTheme`, `LearnColors`, `LearnFreeSpace`, `LearnToolbarLayout` |
 | Component | `LearnButton`, `LearnIconButton`, `LearnInput`, `LearnSelect`, `LearnMenu`, `showLearnDialog`, `LearnNavItem`, content cards/art/labels, listening progress |
-| Compose | `LearnWindow`, `LearnPaneLayout`, `LearnNavigationLayout`, `LearnScrollLayout`, `LearnAreaClipper`, `mediaQueryForPane`, `LearnToolbar`, `LearnNavigationBar`, `LearnNavigationRail`, `LearnScrollAnchor` |
+| Compose | `LearnRoute`, `LearnRouteView`, `LearnRouteData`, `LearnRouteBar`, `LearnWindow`, `LearnPaneLayout`, `LearnNavigationLayout`, `LearnScrollLayout`, `LearnAreaClipper`, `mediaQueryForPane`, `LearnToolbar`, `LearnNavigationBar`, `LearnNavigationRail`, `LearnScrollAnchor` |
 
 The catalog contains 16 foundation, 64 component and 8 compose contracts. This
 table describes implemented APIs, not a claim that every catalog item is a
@@ -56,19 +56,57 @@ separate implemented widget.
 ## Adaptive app surface
 
 ```dart
-MaterialApp(
+final router = GoRouter(routes: [
+  LearnRoute(
+    path: '/lessons',
+    builder: (context, state) => const LessonList(),
+    details: [
+      GoRoute(
+        path: ':id',
+        builder: (context, state) => LessonPage(
+          id: state.pathParameters['id']!,
+        ),
+      ),
+    ],
+  ),
+]);
+
+MaterialApp.router(
+  routerConfig: router,
   theme: learnTheme(Brightness.light),
   darkTheme: learnTheme(Brightness.dark),
   builder: (context, child) => LearnWindow(child: child!),
-  home: const MyHome(),
 );
 ```
 
+Import `package:go_router/go_router.dart` for `GoRouter` and `GoRoute`.
+`LessonList` and `LessonPage` are your app's pages. Open a detail with
+`context.go('/lessons/7')`; `context.pop()` returns to the list, including after
+an initial deep link. Named routes, query parameters and nested details use
+GoRouter as usual. Put detail routes in `details`, on this shell's Navigator;
+a detail with a different `parentNavigatorKey` intentionally leaves its pane.
+
+`LearnRoute` shows a full detail page on a small window, master left/detail
+right on a wide window, and master above/detail below a tabletop division.
+The same detail Navigator and page state stay mounted when the window changes.
+Your app does not choose panes or move pages. Keep shared business controllers
+outside the route so Back and reopening a detail can use the same session.
+
+Optionally add `barBuilder` returning `LearnRouteBar`, with `destinations`,
+`selected` and `onSelected`. The route reserves the bar's space and chooses a
+bottom bar, rail or native edge strip. The native strip stays below camera/status
+regions without subtracting safe padding twice. Destinations and taps belong
+to the app. With no bar, no rail width is reserved.
+
 The window wraps the navigator so menus and modal routes also receive current
 native regions. Place pane SafeAreas inside it. `LearnWindowData.maybeOf(context)`
-exposes readiness, active areas and the native navigation-side hint. The app
-passes size, text scale, safe padding and display features to `LearnPaneLayout`;
-it retains its controllers while moving existing content between panes.
+exposes readiness, active areas and the native navigation-side hint.
+`LearnRouteData.of(context).frame` is the pane's target frame in window
+coordinates; `size` is the whole window size. Ordinary pages use local
+`MediaQuery` and constraints. Frame changes animate for 260 ms, or immediately
+with reduced motion. During resize, the route waits for a matching native map
+before choosing another split. A new revision in the same box is mapped in the
+current frame, so a real division is not briefly removed.
 
 For scrolling pages, keep the viewport edge-to-edge and add
 `LearnScrollLayout.topPadding` to the initial content padding. Wrap only the first
@@ -84,7 +122,8 @@ application by themselves.
 
 ## Responsibilities
 
-The package depends on Flutter and `foldable_info` for measurements. It owns
+The package depends on Flutter, `foldable_info` for measurements and
+`go_router` for its adaptive route shell. It owns
 theme, reusable presentation and adaptive layout policy. It has no dependency
 on applications, repositories, network, storage, authentication or playback
 engines. App/domain owns lessons, session state, routes and persistence. Widgets

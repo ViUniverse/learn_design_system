@@ -20,8 +20,11 @@ mọi widget. Hủy surface sẽ hủy subscription của surface, không hủy 
 
 `FoldableSpace.toBox` chuyển vùng native sang app surface. Chỉ snapshot có
 view size, pixel ratio, session và revision phù hợp mới được dùng. Khi xoay,
-resize hoặc dữ liệu bridge chưa sẵn sàng, dùng insets/display features Flutter
-đang có và chờ snapshot mới. Không giữ camera/bản lề ở tọa độ màn hình cũ.
+resize hoặc dữ liệu bridge chưa sẵn sàng, `LearnWindow` dùng insets/display
+features Flutter đang có. `LearnRoute` giữ bố cục đã chọn trong khoảng chờ bản
+đồ native khớp với view mới, tránh chen một bố cục phẳng giữa hai vị trí division.
+Lần đầu hoặc nền tảng không hỗ trợ vùng native dùng dữ liệu Flutter. Không coi
+vùng cản cũ là vùng cản hợp lệ của view mới.
 
 Vùng native `isActive=false` được loại khỏi policy. `unknown` khác với false;
 vùng cản chưa rõ loại nhưng có frame được tránh theo hướng thận trọng. Margin
@@ -95,6 +98,22 @@ bar. Android, iPhone/iPad chưa có reserved regions, snapshot cũ, vùng inacti
 hoặc chữ quá lớn đều giữ top inset do OS cung cấp. Không dùng tên máy hay một
 chiều cao status bar cố định để bỏ inset. Player dùng cùng policy cho hàng
 toolbar, đồng thời `LearnToolbar` kiểm tra từng target với vùng cản thật.
+
+## Route
+
+App khai báo `LearnRoute(path: ..., builder: ..., details: [GoRoute(...)])` trong
+GoRouter. Trang detail là page của cùng một Navigator ở mọi kích thước; app
+không tạo hai bản trang hoặc tự kiểm tra split. `barBuilder` là tùy chọn để
+khai báo destinations; compose chịu trách nhiệm chọn cạnh/vùng và giữ chỗ.
+
+Deep link, Back, query, named route và detail lồng nhau giữ hành vi GoRouter.
+Các detail phải dùng Navigator của shell. `parentNavigatorKey` trỏ Navigator
+khác sẽ mở route ngoài pane theo khai báo GoRouter của app.
+
+Animation 260 ms chỉ di chuyển khung clip. Nội dung reflow một lần theo kích
+thước đích, giữ page state, ScrollController và focus. Reduced motion cập nhật
+ngay. Ngưỡng split có khoảng đệm 16 để tránh bật/tắt quanh một chiều rộng.
+Mọi action player và phiên nghe vẫn thuộc app.
 
 ## State và giới hạn
 

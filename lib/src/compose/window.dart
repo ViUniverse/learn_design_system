@@ -17,6 +17,7 @@ class LearnWindowData {
     this.nativeReady = false,
     this.origin = Offset.zero,
     this.topRegionsReady = false,
+    this.isChanging = false,
   });
   final Size size;
   final List<ViewArea> areas;
@@ -26,6 +27,9 @@ class LearnWindowData {
 
   /// True only for current, available iOS reserved-region measurements.
   final bool topRegionsReady;
+
+  /// Native areas are available, but do not yet match the resized view.
+  final bool isChanging;
 
   static LearnWindowData? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<_WindowScope>()?.data;
@@ -127,8 +131,17 @@ class _LearnWindowState extends State<LearnWindow> {
       _measure();
       final media = MediaQuery.of(context);
       final data = _snapshot;
-      final local = _local;
       final view = _view!;
+      final render = _box.currentContext?.findRenderObject();
+      // A new revision in the same box can be used in this frame. Waiting for
+      // another layout pass would briefly remove a real division from the UI.
+      final local =
+          data != null &&
+              render is RenderBox &&
+              render.hasSize &&
+              render.size == box.biggest
+          ? FoldableSpace.toBox(data: data, target: render, view: view)
+          : _local;
       final current =
           data != null &&
           data.viewState == ViewState.ready &&
@@ -221,6 +234,7 @@ class _LearnWindowState extends State<LearnWindow> {
                 areas: areas,
                 nativeReady: current,
                 topRegionsReady: topRegionsReady,
+                isChanging: data?.areas.isReady == true && !current,
                 navigationSide: current ? data.ios.value?.barSide.value : null,
               ),
               child: MediaQuery(
@@ -319,6 +333,7 @@ class _WindowScope extends InheritedWidget {
       oldWidget.data.origin != data.origin ||
       oldWidget.data.nativeReady != data.nativeReady ||
       oldWidget.data.topRegionsReady != data.topRegionsReady ||
+      oldWidget.data.isChanging != data.isChanging ||
       oldWidget.data.navigationSide != data.navigationSide ||
       !listEquals(oldWidget.data.areas, data.areas);
 }

@@ -1,6 +1,6 @@
 {
   "name": "Learn Design System specification audit",
-  "checkedAt": "2026-10-11T12:29:42.512466+00:00",
+  "checkedAt": "2026-10-11T15:57:21.018571+00:00",
   "status": "pass",
   "scope": "Written specification, generated tokens, local links and exact color pairs. No production widget behavior or device/screen-reader certification.",
   "coverage": {

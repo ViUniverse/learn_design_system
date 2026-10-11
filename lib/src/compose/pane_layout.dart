@@ -9,10 +9,13 @@ import 'navigation_layout.dart';
 /// A trailing camera inset belongs only to panes touching that window edge.
 MediaQueryData mediaQueryForPane(MediaQueryData window, Rect pane, Size size) {
   EdgeInsets local(EdgeInsets edges) => EdgeInsets.fromLTRB(
-    (edges.left - pane.left).clamp(0.0, pane.width),
-    (edges.top - pane.top).clamp(0.0, pane.height),
-    (edges.right - (size.width - pane.right)).clamp(0.0, pane.width),
-    (edges.bottom - (size.height - pane.bottom)).clamp(0.0, pane.height),
+    (edges.left - math.max(0, pane.left)).clamp(0.0, pane.width),
+    (edges.top - math.max(0, pane.top)).clamp(0.0, pane.height),
+    (edges.right - math.max(0, size.width - pane.right)).clamp(0.0, pane.width),
+    (edges.bottom - math.max(0, size.height - pane.bottom)).clamp(
+      0.0,
+      pane.height,
+    ),
   );
   return window.copyWith(
     size: pane.size,
@@ -52,6 +55,7 @@ class LearnPaneLayout {
     TextDirection direction = TextDirection.ltr,
     EdgeInsets safeArea = EdgeInsets.zero,
     EdgeInsets viewInsets = EdgeInsets.zero,
+    bool showNavigation = true,
   }) {
     final onRight =
         (navigationSide == BarSide.end) == (direction == TextDirection.ltr);
@@ -74,10 +78,10 @@ class LearnPaneLayout {
       axis: layout.axis,
       separated: layout.separated,
       navigationOnRight: onRight,
-      edgeNavigationFrame: navigation.edgeFrame,
+      edgeNavigationFrame: showNavigation ? navigation.edgeFrame : null,
     );
     final scale = math.max(1.0, textScaler.scale(16) / 16);
-    final nav = navigation.railWidth;
+    final nav = showNavigation ? navigation.railWidth : 0.0;
     final masterMin = 320 * scale;
     final detailMin = 360 * scale;
     final full = Offset.zero & size;
