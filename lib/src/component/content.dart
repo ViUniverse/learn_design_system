@@ -275,6 +275,82 @@ class _CoverPainter extends CustomPainter {
             ..strokeWidth = 2,
         );
       }
+    } else if (variant >= 4 && variant <= 8) {
+      final accent = Paint()..color = const Color(0xFFB57156);
+      final line = Paint()
+        ..color = ink
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = s.shortestSide * .035
+        ..strokeCap = StrokeCap.round;
+      final w = s.width, h = s.height;
+      switch (variant) {
+        case 4:
+          c.drawLine(Offset(w * .5, h * .78), Offset(w * .5, h * .29), line);
+          for (final (x, y) in [(0.27, 0.4), (0.56, 0.25), (0.56, 0.49)]) {
+            c.drawOval(Rect.fromLTWH(w * x, h * y, w * .22, h * .18), accent);
+          }
+        case 5:
+          c.drawCircle(Offset(w * .7, h * .27), h * .11, accent);
+          for (var i = 0; i < 3; i++) {
+            c.drawPath(
+              Path()
+                ..moveTo(w * .1, h * (.48 + i * .12))
+                ..cubicTo(
+                  w * .32,
+                  h * (.22 + i * .12),
+                  w * .66,
+                  h * (.7 + i * .12),
+                  w * .9,
+                  h * (.45 + i * .12),
+                ),
+              line,
+            );
+          }
+        case 6:
+          c.drawCircle(Offset(w * .51, h * .46), s.shortestSide * .25, accent);
+          c.drawCircle(
+            Offset(w * .65, h * .33),
+            s.shortestSide * .22,
+            Paint()..color = bg,
+          );
+          for (final (x, y) in [(0.22, 0.24), (0.79, 0.7), (0.24, 0.75)]) {
+            c.drawCircle(
+              Offset(w * x, h * y),
+              s.shortestSide * .018,
+              line..style = PaintingStyle.fill,
+            );
+          }
+        case 7:
+          final book = Path()
+            ..moveTo(w * .18, h * .29)
+            ..quadraticBezierTo(w * .36, h * .19, w * .5, h * .34)
+            ..quadraticBezierTo(w * .64, h * .19, w * .82, h * .29)
+            ..lineTo(w * .82, h * .74)
+            ..quadraticBezierTo(w * .64, h * .64, w * .5, h * .8)
+            ..quadraticBezierTo(w * .36, h * .64, w * .18, h * .74)
+            ..close();
+          c.drawPath(book, accent);
+          c.drawLine(Offset(w * .5, h * .36), Offset(w * .5, h * .74), line);
+          c.drawLine(Offset(w * .26, h * .43), Offset(w * .41, h * .46), line);
+          c.drawLine(Offset(w * .6, h * .46), Offset(w * .74, h * .43), line);
+        case 8:
+          c.drawArc(
+            Rect.fromLTWH(w * .23, h * .21, w * .54, h * .62),
+            math.pi,
+            math.pi,
+            false,
+            line..strokeWidth = s.shortestSide * .065,
+          );
+          for (final x in [.18, .69]) {
+            c.drawRRect(
+              RRect.fromRectAndRadius(
+                Rect.fromLTWH(w * x, h * .47, w * .14, h * .29),
+                Radius.circular(s.shortestSide * .06),
+              ),
+              accent,
+            );
+          }
+      }
     } else {
       c.drawCircle(
         Offset(s.width * .69, s.height * .3),

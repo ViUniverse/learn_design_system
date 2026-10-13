@@ -8,23 +8,29 @@ class LearnListeningProgress extends StatelessWidget {
     required this.completed,
     required this.progress,
     required this.remainingSeconds,
+    this.started = true,
   });
   final String title;
   final bool completed;
+  final bool started;
   final double? progress;
   final int? remainingSeconds;
   @override
   Widget build(BuildContext context) {
     final remaining = remainingSeconds;
     final progress = this.progress;
-    final label = completed
+    final label = !started && !completed
+        ? 'Chưa nghe'
+        : completed
         ? 'Đã nghe'
         : remaining == null
         ? 'Đang nghe'
         : 'Còn ${remaining ~/ 60}:${(remaining % 60).toString().padLeft(2, '0')}';
     return Semantics(
       label: 'Tiến độ nghe $title',
-      value: completed
+      value: !started && !completed
+          ? 'Chưa nghe'
+          : completed
           ? 'Đã nghe'
           : progress == null
           ? 'Đang nghe, chưa có tổng thời lượng'
@@ -35,7 +41,7 @@ class LearnListeningProgress extends StatelessWidget {
           runSpacing: 6,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            if (completed || progress == null)
+            if (completed || progress == null || !started)
               Icon(
                 completed ? Icons.check_rounded : Icons.headphones_rounded,
                 size: 15,

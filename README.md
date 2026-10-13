@@ -53,6 +53,28 @@ The catalog contains 16 foundation, 64 component and 8 compose contracts. This
 table describes implemented APIs, not a claim that every catalog item is a
 separate implemented widget.
 
+## Lesson and collection cards
+
+`LearnLessonCard` is the same presentation contract for Home discovery and a
+library list/grid: square cover, title, optional short description and metadata,
+then listening facts and separate actions. It accepts values, widgets and
+callbacks; it never reads storage or starts playback. At narrow widths or large
+text sizes, content and footer actions wrap instead of shrinking or clipping text.
+
+`LearnCollectionCard` represents a container with up to three stacked covers,
+a collection label and app-supplied lesson/group counts. Do not use a collection
+card to represent one lesson or invent counts for unavailable data.
+
+`LearnLessonCover(id: lessonId, coverId: configuredCover)` chooses from eight
+original warm vector covers in `LearnDefaultCovers.labels`. The automatic choice
+depends on a stable ID rather than a mutable title. Null or unknown cover keys
+use that fallback; custom imagery can be supplied through the card's `cover`.
+These illustrations are decoration, not inferred descriptions of audio content.
+
+`LearnListeningProgress(started: false, ...)` shows “Chưa nghe”. With actual
+history it shows in-progress/completed state; an unknown duration never becomes
+a fabricated percentage. Completion describes listening, not mastery or download.
+
 ## Adaptive app surface
 
 ```dart

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
+import 'typography.dart';
 
 extension LearnColors on BuildContext {
   Color color(String role) => (Theme.of(this).brightness == Brightness.dark
@@ -21,6 +22,26 @@ ThemeData learnTheme(Brightness brightness) {
     ),
   );
   return base.copyWith(
+    textTheme: base.textTheme
+        .copyWith(
+          headlineLarge: LearnType.h1,
+          headlineMedium: LearnType.h1,
+          headlineSmall: LearnType.h2,
+          titleLarge: LearnType.h3,
+          titleMedium: LearnType.title,
+          bodyLarge: LearnType.bodyLarge,
+          bodyMedium: LearnType.body,
+          bodySmall: LearnType.small,
+          labelLarge: LearnType.label,
+          labelMedium: LearnType.label,
+          labelSmall: LearnType.caption,
+        )
+        .apply(
+          bodyColor: t['text-primary'],
+          displayColor: t['text-primary'],
+          fontFamily: 'SN Pro',
+          package: 'learn_design_system',
+        ),
     scaffoldBackgroundColor: t['background'],
     colorScheme: base.colorScheme.copyWith(
       primary: t['primary'],

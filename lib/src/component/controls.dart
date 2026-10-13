@@ -167,12 +167,24 @@ class LearnInput extends StatelessWidget {
     this.pill = false,
     this.autofocus = false,
     this.textInputAction,
+    this.focusNode,
+    this.enabled = true,
+    this.readOnly = false,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.maxLines = 1,
+    this.maxLength,
   });
   final TextEditingController? controller;
   final String? initialValue, label, placeholder, helperText, errorText;
   final ValueChanged<String>? onChanged, onSubmitted;
   final bool pill, autofocus;
   final TextInputAction? textInputAction;
+  final FocusNode? focusNode;
+  final bool enabled, readOnly;
+  final Widget? prefixIcon, suffixIcon;
+  final int maxLines;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) => TextFormField(
@@ -182,11 +194,19 @@ class LearnInput extends StatelessWidget {
     onFieldSubmitted: onSubmitted,
     autofocus: autofocus,
     textInputAction: textInputAction,
+    focusNode: focusNode,
+    enabled: enabled,
+    readOnly: readOnly,
+    maxLines: maxLines,
+    maxLength: maxLength,
+    style: Theme.of(context).textTheme.bodyMedium,
     decoration: InputDecoration(
       labelText: label,
       hintText: placeholder,
       helperText: helperText,
       errorText: errorText,
+      prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(pill ? 28 : 12),
       ),
@@ -209,12 +229,13 @@ class LearnSelect<T> extends StatelessWidget {
     this.label,
     this.semanticLabel,
     this.block = true,
+    this.enabled = true,
   });
   final T? value;
   final ValueChanged<T?> onChanged;
   final List<LearnOption<T>> options;
   final String? label, semanticLabel;
-  final bool block;
+  final bool block, enabled;
 
   @override
   Widget build(BuildContext context) => Semantics(
@@ -222,7 +243,7 @@ class LearnSelect<T> extends StatelessWidget {
     child: DropdownButtonFormField<T>(
       key: ValueKey(value),
       initialValue: value,
-      onChanged: onChanged,
+      onChanged: enabled ? onChanged : null,
       isExpanded: block,
       dropdownColor: context.color('surface'),
       borderRadius: BorderRadius.circular(12),

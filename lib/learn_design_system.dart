@@ -3,10 +3,13 @@ library;
 
 export 'src/foundation/colors.dart';
 export 'src/foundation/theme.dart';
+export 'src/foundation/typography.dart';
 export 'src/foundation/space.dart';
 export 'src/component/content.dart';
 export 'src/component/controls.dart';
 export 'src/component/listening_progress.dart';
+export 'src/component/lesson_cover.dart';
+export 'src/component/learning_cards.dart';
 export 'src/component/navigation.dart';
 export 'src/compose/pane_layout.dart';
 export 'src/compose/route.dart';
