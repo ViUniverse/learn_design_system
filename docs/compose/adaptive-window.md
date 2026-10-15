@@ -110,6 +110,10 @@ Deep link, Back, query, named route và detail lồng nhau giữ hành vi GoRout
 Các detail phải dùng Navigator của shell. `parentNavigatorKey` trỏ Navigator
 khác sẽ mở route ngoài pane theo khai báo GoRouter của app.
 
+Chỉ các route trong Navigator của shell mới quyết định có mở pane detail hay
+không. Popup đăng nhập hoặc dialog trên root Navigator không được làm màn nền
+đổi sang hai pane, thu hẹp nội dung hoặc mất trạng thái khi mở/đóng.
+
 Animation 260 ms chỉ di chuyển khung clip. Nội dung reflow một lần theo kích
 thước đích, giữ page state, ScrollController và focus. Reduced motion cập nhật
 ngay. Ngưỡng split có khoảng đệm 16 để tránh bật/tắt quanh một chiều rộng.

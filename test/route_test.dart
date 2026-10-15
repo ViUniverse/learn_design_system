@@ -54,6 +54,19 @@ void main() {
     final router = GoRouter(
       initialLocation: location,
       routes: [
+        GoRoute(
+          path: '/overlay',
+          pageBuilder: (_, state) => CustomTransitionPage<void>(
+            key: state.pageKey,
+            opaque: false,
+            barrierDismissible: true,
+            barrierColor: Colors.black54,
+            barrierLabel: 'Close overlay',
+            child: const Dialog(child: Text('Auxiliary overlay')),
+            transitionsBuilder: (_, animation, _, child) =>
+                FadeTransition(opacity: animation, child: child),
+          ),
+        ),
         LearnRoute(
           path: '/home',
           builder: (_, _) => const CounterPage('Home'),
@@ -114,6 +127,47 @@ void main() {
 
   Rect pane(WidgetTester tester, String name) =>
       tester.getRect(find.byKey(ValueKey('learn-$name-pane')));
+
+  for (final size in [const Size(390, 844), const Size(1000, 700)]) {
+    for (final location in ['/home', '/home/7', '/home/7/note']) {
+      testWidgets('Root overlay preserves pane state $size $location', (
+        tester,
+      ) async {
+        final router = await start(
+          tester,
+          size: size,
+          location: location,
+          bar: true,
+        );
+        final shell = find.byType(LearnRouteView);
+        final hasDetail = tester.widget<LearnRouteView>(shell).hasDetail;
+        final masterFrame = pane(tester, 'master');
+        final detailFrame = pane(tester, 'detail');
+        final home = find.byWidgetPredicate(
+          (widget) => widget is CounterPage && widget.label == 'Home',
+        );
+        final homeState = tester.state(home);
+        final overlay = router.push('/overlay');
+        for (final elapsed in [0, 90, 300]) {
+          await tester.pump(Duration(milliseconds: elapsed));
+          expect(tester.widget<LearnRouteView>(shell).hasDetail, hasDetail);
+          expect(pane(tester, 'master'), masterFrame);
+          expect(pane(tester, 'detail'), detailFrame);
+          expect(tester.state(home), same(homeState));
+        }
+        expect(find.text('Auxiliary overlay'), findsOneWidget);
+        router.pop();
+        await tester.pumpAndSettle();
+        await overlay;
+        expect(router.routeInformationProvider.value.uri.path, location);
+        expect(pane(tester, 'master'), masterFrame);
+        expect(pane(tester, 'detail'), detailFrame);
+        expect(tester.state(home), same(homeState));
+        expect(tester.takeException(), isNull);
+        await tester.pumpWidget(const SizedBox());
+      });
+    }
+  }
 
   testWidgets('Deep link opens two panes and Back returns to the list', (
     tester,

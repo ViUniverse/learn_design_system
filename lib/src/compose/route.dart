@@ -32,16 +32,36 @@ class LearnRoute extends ShellRoute {
     return LearnRoute._(
       navigatorKey: navigatorKey,
       routes: [root],
-      builder: (context, state, child) => LearnRouteView(
-        hasDetail: state.topRoute != root,
-        master: builder(context, state),
-        detail: child,
-        bar: barBuilder?.call(context, state),
-      ),
+      masterBuilder: builder,
+      barBuilder: barBuilder,
     );
   }
 
-  LearnRoute._({super.navigatorKey, required super.routes, super.builder});
+  LearnRoute._({
+    super.navigatorKey,
+    required super.routes,
+    required GoRouterWidgetBuilder masterBuilder,
+    GoRouterWidgetBuilder? barBuilder,
+  }) : _masterBuilder = masterBuilder,
+       _barBuilder = barBuilder,
+       super(builder: (_, _, navigator) => navigator);
+
+  final GoRouterWidgetBuilder _masterBuilder;
+  final GoRouterWidgetBuilder? _barBuilder;
+
+  @override
+  Widget buildWidget(
+    BuildContext context,
+    GoRouterState state,
+    ShellRouteContext shellRouteContext,
+  ) => LearnRouteView(
+    // The global top route may be a login/dialog on another Navigator.
+    // Only routes in this shell's own stack can open the detail pane.
+    hasDetail: shellRouteContext.match.matches.last.route != routes.single,
+    master: _masterBuilder(context, state),
+    detail: super.buildWidget(context, state, shellRouteContext)!,
+    bar: _barBuilder?.call(context, state),
+  );
 }
 
 /// Current pane geometry, for controls that need window coordinates.
